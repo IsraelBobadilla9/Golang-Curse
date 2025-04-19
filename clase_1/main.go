@@ -68,4 +68,5 @@ func main() {
 	floatX := 32.4
 	fmt.Println(reflect.TypeOf(string1))
 	fmt.Println(reflect.TypeOf(floatX))
+
 }
