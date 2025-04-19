@@ -2,7 +2,6 @@ package main // Este es el nombre del modulo, se le dice que es un handler, ya q
 // fmt permite generar salidas de texto
 import (
 	"fmt"
-	"reflect"
 )
 
 // Como ejecutar?
@@ -63,10 +62,62 @@ func main() {
 */
 // Refleject y TypeOf
 // Permite detectar el tipo de dato que usa una variable
+
+/*
+
 func main() {
 	var string1 string = "texto"
 	floatX := 32.4
 	fmt.Println(reflect.TypeOf(string1))
 	fmt.Println(reflect.TypeOf(floatX))
+
+}
+*/
+
+// Punteros
+// Permite acceder al valor binario del objeto???, es la referencia en memoria de donde se aloja el valor
+
+/*
+func main() {
+	color := "rojo"
+	fmt.Println(color, &color)
+	var estado bool = true
+	fmt.Println(&estado)
+}
+*/
+
+// Condicionales
+
+func main() {
+	edad := 20
+
+	if edad >= 18 {
+		fmt.Println("Mayor de edad")
+	} else {
+		fmt.Println("Menor de edad")
+	}
+
+	color := "blanco"
+
+	if color == "rojo" {
+		fmt.Println(" Rojo -")
+	} else if color == "blanco" {
+		fmt.Println("Blanco -")
+	}
+	// declaracion en tiempop de ejecucion de una variable
+	if variable := 2; variable == 2 {
+		fmt.Println("La variable es igual a 2")
+	}
+	fmt.Println("CASE ")
+	switch color {
+	case "rojo":
+		fmt.Println("rojo")
+
+	case "blanco":
+		fmt.Println("blanco")
+
+	default:
+		fmt.Println("DEFAULT ")
+	}
 
 }
