@@ -2,6 +2,7 @@ package main // Este es el nombre del modulo, se le dice que es un handler, ya q
 // fmt permite generar salidas de texto
 import (
 	"fmt"
+	"reflect"
 )
 
 // Como ejecutar?
@@ -29,6 +30,7 @@ func main() { // las llaves siempre tienen que ir arriba junto con la definicion
 
 }
 */
+/*
 // Tipos de datos
 func main() {
 	var string1 string = "Texto"
@@ -57,4 +59,13 @@ func main() {
 	var entero_uint8 uint8 = 123
 	fmt.Println(entero_uint8)
 
+}
+*/
+// Refleject y TypeOf
+// Permite detectar el tipo de dato que usa una variable
+func main() {
+	var string1 string = "texto"
+	floatX := 32.4
+	fmt.Println(reflect.TypeOf(string1))
+	fmt.Println(reflect.TypeOf(floatX))
 }
