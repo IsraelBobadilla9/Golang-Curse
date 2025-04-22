@@ -15,6 +15,33 @@ func main() {
 	nombre, apellido, edad := miFuncionConRetornoMultiple("israel", "bobadilla", 20)
 
 	fmt.Println(nombre, apellido, edad)
+	//Funciones anonimas
+	fmt.Println("Uso de funciones anonimas ------------------------------")
+	fmt.Println(suma(10, 5))
+	fmt.Println("Uso de funciones clousure ------------------------------")
+
+	Tabla := tabla(2)
+	for i := 1; i <= 10; i++ {
+		fmt.Println(" 2x ", i, " = ", Tabla())
+	}
+}
+
+// funcion anonima, se declara la funcion utilizando una variable
+// mas usado para las conexiones a la base de datos
+var suma = func(numero1 int, numero2 int) int {
+	return numero1 + numero2
+}
+
+// funciones close
+// son funciones que retornan una funcio
+func tabla(numero1 int) func() int {
+	numero := numero1
+	secuencia := 0
+	return func() int {
+		secuencia++
+		return numero * secuencia
+	}
+
 }
 
 // Declaracion de funcion sin modularizar
