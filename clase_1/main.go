@@ -140,6 +140,8 @@ func main() {
 }
 */
 
+/*
+
 // arreglos y slices
 // almacena mas de un valor , el arreglo se le indica el largo pero al slices no se le indica el tamanio y podemos agregar mas valores aunque especifiquemos
 
@@ -171,5 +173,51 @@ func main() {
 	paises2 = append(paises2[:2], paises2[2+1:]...)
 	fmt.Println(paises2, len(paises2))
 	fmt.Println(reflect.TypeOf(paises2))
+
+}
+*/
+
+// map
+// el mapa es un arreglo compuesto de mas de un valor
+// almacena objetos de tipo clave valor y diferentes tipos de datos
+func main() {
+	paises := make(map[string]int)
+	paises["Argentina"] = 4000000
+	paises["Mexico"] = 2000000
+	paises["chile"] = 2000000
+
+	fmt.Println(paises)
+	fmt.Println(reflect.TypeOf(paises))
+	fmt.Println(paises["chile"])
+
+	fmt.Println("-----------------------")
+	paises2 := map[int]string{
+		1: "Chile",
+		2: "Mexico",
+		3: "Argentina",
+	}
+	fmt.Println(paises2)
+	fmt.Println(reflect.TypeOf(paises2))
+	fmt.Println(paises2[1])
+
+	// veamos si existe algun valor en el map
+	pais, existe := paises2[11]
+	if existe {
+		fmt.Println("Existe el valor ", pais)
+	} else {
+		fmt.Println("No existe el pais ")
+	}
+	// eliminar un elemento de un pais
+
+	delete(paises2, 1)
+	fmt.Println(paises2)
+
+	// recorer un map con for
+
+	for id, valor := range paises2 {
+		fmt.Println("ID ", id, "Valor", valor)
+	}
+
+	// JSON
 
 }
