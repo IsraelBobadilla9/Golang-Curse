@@ -2,6 +2,7 @@ package main // Este es el nombre del modulo, se le dice que es un handler, ya q
 // fmt permite generar salidas de texto
 import (
 	"fmt"
+	"reflect"
 )
 
 // Como ejecutar?
@@ -85,7 +86,7 @@ func main() {
 	fmt.Println(&estado)
 }
 */
-
+/*
 // Condicionales
 
 func main() {
@@ -119,5 +120,56 @@ func main() {
 	default:
 		fmt.Println("DEFAULT ")
 	}
+
+}
+*/
+/*
+
+// Ciclos
+
+func main() {
+	i := 1
+	for i < 11 {
+		fmt.Println(i)
+		i++
+	}
+
+	for i2 := 2; i2 < 12; i2++ {
+		fmt.Println(i2)
+	}
+}
+*/
+
+// arreglos y slices
+// almacena mas de un valor , el arreglo se le indica el largo pero al slices no se le indica el tamanio y podemos agregar mas valores aunque especifiquemos
+
+func main() {
+
+	// arreglos
+	var paises [4]string
+	paises[0] = "Mexico"
+	paises[1] = "Chile"
+	paises[2] = "Peru"
+	paises[3] = "Venezuela"
+
+	fmt.Println(paises)
+
+	fmt.Println(paises[0], len(paises))
+	fmt.Println(reflect.TypeOf(paises))
+
+	//slice
+	var paises2 = make([]string, 4)
+	paises2[0] = "Mexico"
+	paises2[1] = "Chile"
+	paises2[2] = "Peru"
+	paises2[3] = "Venezuela"
+
+	fmt.Println(paises2, len(paises2))
+	fmt.Println(reflect.TypeOf(paises2))
+	// agregamos un elementos al slice
+	paises2 = append(paises2, "Ecuador")
+	paises2 = append(paises2[:2], paises2[2+1:]...)
+	fmt.Println(paises2, len(paises2))
+	fmt.Println(reflect.TypeOf(paises2))
 
 }
