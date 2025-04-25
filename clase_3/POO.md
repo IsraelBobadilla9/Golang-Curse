@@ -1,0 +1,1 @@
+No hay programacion orientada a objetos, lo que se realiza es emular 
