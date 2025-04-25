@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
+/*
 // Funciones
 // Plabara reservada func, la llave de apertura siempre va alado
 
@@ -25,6 +29,9 @@ func main() {
 		fmt.Println(" 2x ", i, " = ", Tabla())
 	}
 }
+
+
+
 
 // funcion anonima, se declara la funcion utilizando una variable
 // mas usado para las conexiones a la base de datos
@@ -62,4 +69,29 @@ func miFuncionConRetorno(nombre string) string {
 
 func miFuncionConRetornoMultiple(nombre string, apellido string, edad int) (string, string, int) {
 	return "Hola " + nombre, "Apellido: " + apellido, edad
+}
+*/
+//Goroutines
+// son rutinas que se ejecutan en hilos diferentes y se pueden pausar o colocarse en un canal
+// Usan el paquete time
+func main() {
+	fmt.Println(miFuncion("israel"))
+	fmt.Println("DETENIENDO ...")
+	time.Sleep(time.Second * 5)
+	fmt.Println("INICIANDO")
+	fmt.Println(miFuncion("DAN"))
+
+	// ejemplo2
+	// los canales permite apoderarnos de los hilos del procesador
+	miCanal := make(chan string)
+	go func() {
+		miCanal <- miFuncion("pedro")
+	}()
+	fmt.Println(<-miCanal)
+	fmt.Println("Continuar con la ejecucion")
+
+}
+
+func miFuncion(parametro string) string {
+	return "hola" + parametro
 }
