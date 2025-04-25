@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 /*
@@ -71,9 +70,13 @@ func miFuncionConRetornoMultiple(nombre string, apellido string, edad int) (stri
 	return "Hola " + nombre, "Apellido: " + apellido, edad
 }
 */
+
+/*
 //Goroutines
 // son rutinas que se ejecutan en hilos diferentes y se pueden pausar o colocarse en un canal
 // Usan el paquete time
+
+
 func main() {
 	fmt.Println(miFuncion("israel"))
 	fmt.Println("DETENIENDO ...")
@@ -94,4 +97,20 @@ func main() {
 
 func miFuncion(parametro string) string {
 	return "hola" + parametro
+}
+*/
+
+//Recursividad
+
+func main() {
+	miFuncion(8)
+
+}
+
+func miFuncion(valor int) {
+	dato := valor + 1
+	fmt.Println(dato)
+	if dato != 0 && dato < 10 {
+		miFuncion(dato - 2)
+	}
 }
