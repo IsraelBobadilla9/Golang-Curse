@@ -99,7 +99,7 @@ func miFuncion(parametro string) string {
 	return "hola" + parametro
 }
 */
-
+/*
 //Recursividad
 
 func main() {
@@ -113,4 +113,26 @@ func miFuncion(valor int) {
 	if dato != 0 && dato < 10 {
 		miFuncion(dato - 2)
 	}
+}
+*/
+
+// Defer y panic
+// no tiene manejo de excepciones
+func main() {
+	miFuncion()
+}
+
+// Panic permite mostrar un mensaje de error para deter el script, a nivel de terminal
+func miFuncion() {
+
+	// usado para cerrar la conexion de la base de datos
+	defer fmt.Println("Dentro de un defer") // esto se ejecutara cuando se termine la ejecucion del script
+
+	fmt.Println("Este es un mensaje ")
+
+	a := 1
+	if a == 1 {
+		panic("Se encontro un error en mifuncion linea 136") // pausa la ejecucion
+	}
+
 }
