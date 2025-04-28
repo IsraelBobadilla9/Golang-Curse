@@ -1,11 +1,6 @@
 package main // modulo
 
-import (
-	"fmt"
-	"reflect"
-)
-
-// Estructuras
+import "fmt" // Estructuras
 
 // es un objeto de datos con diferentes campos
 // igual los nombres de los campos tienen que ser publicos por eso se colocan asi
@@ -30,6 +25,7 @@ type Producto struct {
 	CategoriaId Categoria
 }
 
+/*
 func main() {
 
 	fmt.Println("Inicio del main")
@@ -58,4 +54,30 @@ func main() {
 	producto := Producto{Id: 1, Nombre: "Mesa de computadora", Slug: " mesa-de-computadora", Precio: 1234, CategoriaId: categoria}
 	fmt.Printf("%+v \n", producto)
 
+}
+*/
+// Interfaces
+type EjemploInterface interface {
+	miFuncion() string
+	Calculo(n1 int, n2 int) int
+}
+type Estructura struct {
+}
+
+// con * le indicamos que forma parte del contratao de estructura
+func (*Estructura) miFuncion() string {
+	return "texto desde mi funcion"
+}
+
+func (*Estructura) calculo(n1 int, n2 int) int {
+	return n1 * n2
+}
+
+func main() {
+
+	e := Estructura{}
+	imprimir := e.miFuncion()
+	fmt.Println(imprimir)
+	resultado := e.calculo(10, 5)
+	fmt.Println(resultado)
 }
