@@ -16,6 +16,20 @@ type Persona struct {
 	Edad   int
 }
 
+type Categoria struct {
+	Id     int
+	Nombre string
+	Slug   string
+}
+
+type Producto struct {
+	Id          int
+	Nombre      string
+	Slug        string
+	Precio      int
+	CategoriaId Categoria
+}
+
 func main() {
 
 	fmt.Println("Inicio del main")
@@ -36,5 +50,12 @@ func main() {
 	p.Nombre = "Israel"
 	fmt.Printf("%+v \n", p)
 	fmt.Println(reflect.TypeOf(p))
+
+	// estructura anidada | herencia
+	fmt.Println("================ESTRUCTURA ANIDADA ================")
+
+	categoria := Categoria{Id: 1, Nombre: "Categoria 1 ", Slug: "Categoria-1"}
+	producto := Producto{Id: 1, Nombre: "Mesa de computadora", Slug: " mesa-de-computadora", Precio: 1234, CategoriaId: categoria}
+	fmt.Printf("%+v \n", producto)
 
 }
