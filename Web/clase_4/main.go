@@ -12,6 +12,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// EJECUTAR go run github.com/pilu/fresh
 // func main() {
 // 	// se llama mux porque se utiliza gorilamux
 // 	//mux := http.NewServeMux()
@@ -23,8 +24,12 @@ import (
 
 func main() {
 	mux := mux.NewRouter()
+	// rutas
 	mux.HandleFunc("/", rutas.Home)
-
+	mux.HandleFunc("/nosotros", rutas.Nosotros)
+	mux.HandleFunc("/parametros/{id:.*}/{slug:.*}", rutas.Parametros)
+	mux.HandleFunc("/parametros-querystring", rutas.ParametrosQueryString)
+	// ejecucion de servidor
 	errorVariables := godotenv.Load()
 
 	if errorVariables != nil {
